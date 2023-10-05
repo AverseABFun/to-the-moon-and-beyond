@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: white;
+  background-image: url('https://raw.githubusercontent.com/AverseABFun/stackblitz-assets/main/stars.png');
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.moon-image {
+  height: 50px;
+}
+
+.page {
+  opacity: 0;
+  display: none;
+}
+
+.sick {
+  color: greenyellow;
+}
+
+#cover {
+  height: 100%;
+}
+#cover-page {
+  text-align: center;
+}
