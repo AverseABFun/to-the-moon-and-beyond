@@ -50,6 +50,11 @@ function change_page_wrapper(page) {
   };
 }
 
+var includes = Array.from(document.querySelectorAll('.include'));
+for (var i in includes) {
+  var item = includes[i];
+  item.innerHTML = document.querySelector(item.dataset.include).innerHTML;
+}
 var buttons_change = Array.from(document.querySelectorAll('.change-page'));
 for (var i in buttons_change) {
   var item = buttons_change[i];
@@ -66,4 +71,12 @@ for (var i in ending_divs) {
     change_page_wrapper(
       document.querySelector('.temporary-place-button').dataset.toPage
     );
+}
+
+var random_items = Array.from(document.querySelectorAll('.random'));
+for (var i in random_items) {
+  var item = random_items[i];
+  item.innerHTML = eval(item.dataset.items)[
+    Math.floor(Math.random() * eval(item.dataset.items).length)
+  ];
 }
