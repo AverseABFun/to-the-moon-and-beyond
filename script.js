@@ -61,10 +61,15 @@ var buttons_change = Array.from(document.querySelectorAll('.change-page'));
 for (var i in buttons_change) {
   var item = buttons_change[i];
   item.addEventListener('click', change_page_wrapper(item.dataset.toPage));
-  if (Array.from(item.classList).includes('set-var')) {
-    item.addEventListener('click', function () {
-      gameVars[item.dataset.var] = eval(item.dataset.value);
-    });
+  if (item.classList.contains('set-var')) {
+    (function (item) {
+      item.addEventListener('click', function () {
+        gameVars[item.dataset.var] = item.dataset.value;
+        console.log(
+          `setted gameVars[${item.dataset.var}] = ${item.dataset.value}`
+        );
+      });
+    })(item);
   }
 }
 
