@@ -2,7 +2,7 @@ console.log(
   'I said nothing to see here!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWell hello there...\nNothing to see here...'
 );
 
-var gameVars = {};
+window.gameVars = {};
 
 if (!document.location.hash) {
   document.location.hash = document.querySelector('.show-start').id;
@@ -60,9 +60,9 @@ for (var i in includes) {
 var buttons_change = Array.from(document.querySelectorAll('.change-page'));
 for (var i in buttons_change) {
   var item = buttons_change[i];
-  item.onclick = change_page_wrapper(item.dataset.toPage);
+  item.addEventListener('click', change_page_wrapper(item.dataset.toPage));
   if (Array.from(item.classList).includes('set-var')) {
-    item.addEventListener('onclick', function () {
+    item.addEventListener('click', function () {
       gameVars[item.dataset.var] = eval(item.dataset.value);
     });
   }
