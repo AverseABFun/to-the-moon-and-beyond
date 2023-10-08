@@ -27,6 +27,10 @@ h1 {
   opacity: 0;
   display: none;
 }
+.check-var {
+  opacity: inherit;
+  display: inherit;
+}
 
 .sick {
   color: greenyellow;
