@@ -53,3 +53,11 @@ button:hover {
   cursor: pointer;
   background-color: darkblue;
 }
+
+button:disabled:hover {
+  cursor: default;
+  background-color: #555;
+}
+button:disabled {
+  background-color: #555;
+}

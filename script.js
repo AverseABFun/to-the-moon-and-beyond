@@ -68,6 +68,12 @@ var includes = Array.from(document.querySelectorAll('.include'));
 for (var i in includes) {
   var item = includes[i];
   item.innerHTML = document.querySelector(item.dataset.include).innerHTML;
+  if (item.dataset.replace && item.dataset.with) {
+    item.innerHTML = item.innerHTML.replaceAll(
+      item.dataset.replace,
+      item.dataset.with
+    );
+  }
 }
 var buttons_change = Array.from(document.querySelectorAll('.change-page'));
 for (var i in buttons_change) {
@@ -83,7 +89,9 @@ for (var i in buttons_change) {
       });
     })(item);
   }
-  item.addEventListener('click', change_page_wrapper(item.dataset.toPage));
+  if (!item.disabled) {
+    item.addEventListener('click', change_page_wrapper(item.dataset.toPage));
+  }
 }
 
 var ending_divs = Array.from(document.querySelectorAll('.ending'));

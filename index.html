@@ -310,12 +310,53 @@
               class="change-page"
               data-to-page="towards-the-german-settlement"
             >
-              Towards the german settlement</button
+              Towards the German settlement</button
             ><button
               class="change-page"
               data-to-page="towards-the-french-settlement"
             >
-              Towards the french settlement
+              Towards the French settlement
+            </button>
+          </span>
+        </p>
+        <p id="towards-the-german-settlement" class="page">
+          You set out towards the German settlement. Hold on, what direction is
+          it in?
+          <span class="check-var" data-var="told" data-value="false">
+            You don't know and can't ask anyone. You decide to set out in what
+            direction?<br />
+            <br />
+            <button class="change-page" data-to-page="onward-after-start">
+              North</button
+            ><button
+              class="change-page"
+              data-to-page="towards-the-german-settlement"
+              disabled
+              aria-disabled="true"
+              title="That's back to the settlement!"
+            >
+              South</button
+            ><button class="change-page" data-to-page="onward-after-start">
+              East</button
+            ><button class="change-page" data-to-page="onward-after-start">
+              West
+            </button>
+          </span>
+          <span class="check-var" data-var="told" data-value="true">
+            You speak those words aloud and GRANNI responds with,
+            <code>
+              "The German settlement is directly northwest from the settlement.
+              More specifically, it is exactly 53.458273748593729297589 degrees
+              away from directly north." </code
+            ><br />
+            Now having a sense of direction, you set out in direction GRANNI
+            told you. ♪To the German settlement you go!♪<br />
+            <br />
+            <button
+              class="change-page"
+              data-to-page="musical-to-the-german-settlement"
+            >
+              Let's go!
             </button>
           </span>
         </p>
