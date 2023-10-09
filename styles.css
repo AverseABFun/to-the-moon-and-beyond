@@ -61,3 +61,7 @@ button:disabled:hover {
 button:disabled {
   background-color: #555;
 }
+
+.dont-break {
+  white-space: nowrap;
+}

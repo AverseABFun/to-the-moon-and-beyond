@@ -289,13 +289,17 @@
             Wait, which way <i>is</i> onward anyway?<br />
             <br />
             <button
-              class="change-page"
+              class="change-page set-var"
               data-to-page="towards-the-german-settlement"
+              data-var="going-towards"
+              data-value="german"
             >
               Towards the german settlement</button
             ><button
-              class="change-page"
+              class="change-page set-var"
               data-to-page="towards-the-french-settlement"
+              data-var="going-towards"
+              data-value="french"
             >
               Towards the french settlement
             </button>
@@ -307,15 +311,19 @@
             Wait, which way <i>is</i> onward anyway?<br />
             <br />
             <button
-              class="change-page"
+              class="change-page set-var"
               data-to-page="towards-the-german-settlement"
+              data-var="going-towards"
+              data-value="german"
             >
-              Towards the German settlement</button
+              Towards the german settlement</button
             ><button
-              class="change-page"
+              class="change-page set-var"
               data-to-page="towards-the-french-settlement"
+              data-var="going-towards"
+              data-value="french"
             >
-              Towards the French settlement
+              Towards the french settlement
             </button>
           </span>
         </p>
@@ -375,6 +383,37 @@
           >
             Don't ask her for a rover
           </button>
+        </p>
+        <p id="dont-ask-granni-for-a-rover" class="page">
+          You decide to not ask GRANNI for a rover. Eventually, you almost run
+          out of oxygen. You check your map and see that you are a depressing 30
+          miles from your settlement and still 70 miles away from the
+          <span class="dont-break">
+            <span class="check-var" data-var="going-towards" data-value="german"
+              >German</span
+            >
+            <span class="check-var" data-var="going-towards" data-value="french"
+              >French</span
+            >
+          </span>
+          settlement. You can either try to trek back and get a rover or ask
+          GRANNI to send out one. What do you want to do?<br />
+          <br />
+          <button class="change-page" data-to-page="trek-back">Trek back</button
+          ><button class="change-page" data-to-page="ask-granni-for-a-rover">
+            Ask GRANNI for a rover
+          </button>
+        </p>
+        <p id="trek-back" class="page">
+          You begin the trek back, but you only have enough oxygen to make it
+          about a quarter of the journey back. As you lie on the Lunar
+          landscape, dying, you wish you could have gotten to Reina in time.<br />
+          <br />
+          <span
+            class="ending"
+            data-ending-title="Deoxygenated ending"
+            data-ending-feeling="bad"
+          ></span>
         </p>
       </div>
     </main>
