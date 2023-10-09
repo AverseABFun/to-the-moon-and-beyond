@@ -124,6 +124,7 @@
             class="ending"
             data-ending-title="Reina gone ending"
             data-ending-feeling="bad"
+            data-ending-extra="<img class='ending-image' src='https://raw.githubusercontent.com/AverseABFun/stackblitz-assets/main/sadastronaut.webp' />"
           ></span>
         </p>
         <p id="breakfast-sandwich" class="page">
@@ -334,7 +335,12 @@
             You don't know and can't ask anyone. You decide to set out in what
             direction?<br />
             <br />
-            <button class="change-page" data-to-page="onward-after-start">
+            <button
+              class="change-page set-var"
+              data-to-page="onward-after-start"
+              data-var="direction"
+              data-value="north"
+            >
               North</button
             ><button
               class="change-page"
@@ -344,9 +350,19 @@
               title="That's back to the settlement!"
             >
               South</button
-            ><button class="change-page" data-to-page="onward-after-start">
+            ><button
+              class="change-page set-var"
+              data-to-page="onward-after-start"
+              data-var="direction"
+              data-value="east"
+            >
               East</button
-            ><button class="change-page" data-to-page="onward-after-start">
+            ><button
+              class="change-page set-var"
+              data-to-page="onward-after-start"
+              data-var="direction"
+              data-value="west"
+            >
               West
             </button>
           </span>
@@ -369,13 +385,81 @@
             </button>
           </span>
         </p>
+        <p id="towards-the-french-settlement" class="page">
+          You set out towards the French settlement. Hold on, what direction is
+          it in?
+          <span class="check-var" data-var="told" data-value="false">
+            You don't know and can't ask anyone. You decide to set out in what
+            direction?<br />
+            <br />
+            <button class="change-page" data-to-page="onward-after-start">
+              North</button
+            ><button
+              class="change-page"
+              data-to-page="towards-the-french-settlement"
+              disabled
+              aria-disabled="true"
+              title="That's back to the settlement!"
+            >
+              South</button
+            ><button class="change-page" data-to-page="onward-after-start">
+              East</button
+            ><button class="change-page" data-to-page="onward-after-start">
+              West
+            </button>
+          </span>
+          <span class="check-var" data-var="told" data-value="true">
+            You speak those words aloud and GRANNI responds with,
+            <code>
+              "The French settlement is directly southeast from the settlement.
+              More specifically, it is exactly
+              34.484362884649274656827463982746438 degrees away from directly
+              south." </code
+            ><br />
+            Now having a sense of direction, you set out in direction GRANNI
+            told you. <sub>♪</sub>To the French settlement you go!<sup>♪</sup
+            ><br />
+            <br />
+            <button
+              class="change-page"
+              data-to-page="musical-to-the-french-settlement"
+            >
+              Let's go!
+            </button>
+          </span>
+        </p>
         <p id="musical-to-the-german-settlement" class="page">
           After that bit at the start, you realize that it is mind-numbingly
           boring to walk across a Lunar landscape. After only five
           <i>minutes</i> you consider asking GRANNI to send a rover out. What do
           you want to do?<br />
           <br />
-          <button class="change-page" data-to-page="ask-granni-for-a-rover">
+          <button
+            class="change-page"
+            data-to-page="ask-granni-for-a-rover"
+            data-var="almost-deoxygenated"
+            data-value="false"
+          >
+            Ask GRANNI for a rover</button
+          ><button
+            class="change-page"
+            data-to-page="dont-ask-granni-for-a-rover"
+          >
+            Don't ask her for a rover
+          </button>
+        </p>
+        <p id="musical-to-the-french-settlement" class="page">
+          After that bit at the start, you realize that it is mind-numbingly
+          boring to walk across a Lunar landscape. After only five
+          <i>minutes</i> you consider asking GRANNI to send a rover out. What do
+          you want to do?<br />
+          <br />
+          <button
+            class="change-page"
+            data-to-page="ask-granni-for-a-rover"
+            data-var="almost-deoxygenated"
+            data-value="false"
+          >
             Ask GRANNI for a rover</button
           ><button
             class="change-page"
@@ -400,7 +484,12 @@
           GRANNI to send out one. What do you want to do?<br />
           <br />
           <button class="change-page" data-to-page="trek-back">Trek back</button
-          ><button class="change-page" data-to-page="ask-granni-for-a-rover">
+          ><button
+            class="change-page set-var"
+            data-to-page="ask-granni-for-a-rover"
+            data-var="almost-deoxygenated"
+            data-value="true"
+          >
             Ask GRANNI for a rover
           </button>
         </p>
@@ -413,7 +502,115 @@
             class="ending"
             data-ending-title="Deoxygenated ending"
             data-ending-feeling="bad"
+            data-ending-extra="<img class='ending-image' src='https://raw.githubusercontent.com/AverseABFun/stackblitz-assets/main/dead.jpg' />"
           ></span>
+        </p>
+        <p id="ask-granni-for-a-rover" class="page">
+          You speak aloud,
+          <i
+            >"GRANNI, could you send a rover to my location and unlock
+            it?&nbsp;<span class="dont-break"
+              ><span
+                class="check-var"
+                data-var="almost-deoxygenated"
+                data-value="true"
+                >I'm almost out of oxygen.</span
+              ></span
+            >"</i
+          ><br />
+          GRANNI responds,
+          <code
+            >The rover is on it's way.&nbsp;<span class="dont-break"
+              ><span
+                class="check-var"
+                data-var="almost-deoxygenated"
+                data-value="true"
+                >Please sit down and take slow, deep breaths until the rover
+                arrives.</span
+              ></span
+            ></code
+          ><br />
+          <code>"The rover is 5 minutes away."</code><br />
+          <code>"The rover is 4 minutes away."</code><br />
+          <code>"The rover is 3 minutes away."</code><br />
+          <code>"The rover is 2 minutes away."</code><br />
+          <code
+            >"The rover is 1 minute... 30 seconds... 15... 10... 5... 4... 3...
+            2... 1... It has arrived."</code
+          ><br />
+          You look around and see no rover. You say nervously,
+          <i>"GRANNI, I don't see the rover."</i><br />
+          She thinks for a minute, and states,
+          <code
+            >"Odd. Perhaps yours or the rover's UPS(universal positioning unit)
+            is malfunctioning."</code
+          ><br />
+          She then gives you detailed instructions to recalibrate your UPS and
+          you follow them. You then hear a beep and she says,
+          <code>"Aha! Now it's working. The rover is on the way."</code><br />
+          <span
+            class="check-var"
+            data-var="almost-deoxygenated"
+            data-value="true"
+          >
+            After about a minute, as you are beginning to feel short of breath,
+            you see the rover crest the horizon. You begin walking toward,
+            taking the deepest breaths you can and holding them. You almost
+            reach it but unconsiousness pulls you under. You feel the rover's
+            gripper pulling you upward, then
+            nothing..................................<br />
+            <br />
+            <button class="change-page" data-to-page="am-i-alive">
+              Am I alive?
+            </button>
+          </span>
+          <span
+            class="check-var"
+            data-var="almost-deoxygenated"
+            data-value="false"
+          >
+            You soon see the rover crest the horizon. You begin walking toward
+            it, hoping it's as close as it seems. You soon reach it, and climb
+            inside the driver's seat.<br />
+            <br />
+            <button class="change-page" data-to-page="onward-i-guess">
+              Onward, I guess?
+            </button>
+          </span>
+        </p>
+        <p id="onward-after-start" class="page">
+          You decide to go&nbsp;<span class="dont-break"
+            ><span class="insert-var" data-var="direction"></span></span
+          >. Not that it matters much, everything out here looks the same. After
+          around 20 minutes you realize that you are hopelessly lost, and hope
+          for someone to find you. Sadly, that is not happening any time soon.
+          You curl up, fall asleep, and run out of oxygen. Welp, there goes both
+          you and Reina. Good job, idiot.<br />
+          <br />
+          <span
+            class="ending"
+            data-ending-title="Hopelesssly lost ending"
+            data-ending-feeling="bad"
+            data-ending-extra="<img class='ending-image' src='https://raw.githubusercontent.com/AverseABFun/stackblitz-assets/main/dead2.jpg' />"
+          ></span>
+        </p>
+        <p id="am-i-alive" class="page">
+          I think so. Not sure though.<br />
+          Ok, given that there wasn't an ending section, I think that you're
+          alive.
+          <button class="change-page" data-to-page="lets-check-if-your-alive">
+            Let's check
+          </button>
+        </p>
+        <p id="lets-check-if-your-alive" class="page">
+          Good plan. You slowly open your eyes and find that you aren't in
+          heaven. You sit up and find that you are in the driver's seat driving
+          towards the&nbsp;<span class="dont-break"
+            ><span class="insert-var" data-var="going-towards"></span></span
+          >&nbsp;settlement. You decide there's nothing to do but wait.<br /><br />
+          <button class="change-page" data-to-page="onward-i-guess">
+            Onward, I guess?
+          </button>
         </p>
       </div>
     </main>

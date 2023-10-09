@@ -65,3 +65,7 @@ button:disabled {
 .dont-break {
   white-space: nowrap;
 }
+
+.ending-image {
+  height: 400px;
+}

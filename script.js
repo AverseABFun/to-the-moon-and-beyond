@@ -34,11 +34,17 @@ if (!document.location.hash) {
 function check_var() {
   var check_vars = Array.from(document.querySelectorAll('.check-var'));
   for (var i = 0; i < check_vars.length; i++) {
-    console.log(i);
     var item = check_vars[i];
     if (gameVars[item.dataset.var] != item.dataset.value) {
       item.style.display = 'none';
     }
+  }
+}
+function insert_var() {
+  var insert_vars = Array.from(document.querySelectorAll('.insert-var'));
+  for (var i = 0; i < insert_vars.length; i++) {
+    var item = insert_vars[i];
+    item.innerHTML = gameVars[item.dataset.var];
   }
 }
 
@@ -95,10 +101,11 @@ for (var i in buttons_change) {
 }
 
 var ending_divs = Array.from(document.querySelectorAll('.ending'));
+console.log(`${ending_divs.length} endings`);
 for (var i in ending_divs) {
   var item = ending_divs[i];
   item.outerHTML = `
-  You reached an ending! This is the ${item.dataset.endingTitle}. This is a ${item.dataset.endingFeeling} ending.<br><br><button class="change-page temporary-place-button" data-to-page="start">Restart?</button>
+  You reached an ending! This is the ${item.dataset.endingTitle}. This is a ${item.dataset.endingFeeling} ending.<br><br>${item.dataset.endingExtra}<br><br><button class="change-page temporary-place-button" data-to-page="start">Restart?</button>
   `;
   document.querySelector('.temporary-place-button').onclick =
     change_page_wrapper(
@@ -113,3 +120,6 @@ for (var i in random_items) {
     Math.floor(Math.random() * eval(item.dataset.items).length)
   ];
 }
+
+var pages = Array.from(document.querySelectorAll('.page'));
+console.log(`${pages.length} pages`);
