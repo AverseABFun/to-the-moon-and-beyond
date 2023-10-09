@@ -116,6 +116,9 @@ for (var i in ending_divs) {
     change_page_wrapper(
       document.querySelector('.temporary-place-button').dataset.toPage
     );
+  document
+    .querySelector('.temporary-place-button')
+    .classList.remove('temporary-place-button');
 }
 
 var random_items = Array.from(document.querySelectorAll('.random'));
