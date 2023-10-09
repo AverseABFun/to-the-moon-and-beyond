@@ -96,6 +96,11 @@ for (var i in buttons_change) {
     })(item);
   }
   if (!item.disabled) {
+    if (!document.getElementById(item.dataset.toPage)) {
+      console.log(
+        `DANGLING BUTTON!!!! It tries to lead to ${item.dataset.toPage}!`
+      );
+    }
     item.addEventListener('click', change_page_wrapper(item.dataset.toPage));
   }
 }
