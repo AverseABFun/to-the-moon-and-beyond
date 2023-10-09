@@ -9,6 +9,7 @@ if (!document.location.hash) {
   document.location.reload();
 } else {
   check_var();
+  insert_var();
   document.querySelector(document.location.hash).style.display = 'block';
   var func = function () {
     document.querySelector(document.location.hash).style.opacity =
